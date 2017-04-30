@@ -1,0 +1,189 @@
+﻿<html>
+<head>
+<title>HW5</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+
+<body bgcolor="#D4FFFF">
+
+<style type="text/css">
+
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+td {
+    height: 30px;
+}
+
+
+
+#header{
+  background:#66CCCC; 
+  color:#FFFFFF; 
+  border-top:2px solid #336699; 
+  border-bottom:2px solid #336699; 
+  width:100%; 
+}
+
+#sidebody{
+    width:40%;
+    height:79%;
+    margin-left:30%;
+    margin-top:5px;
+    margin-bottom:5px;
+    float:left;
+	text-align:center;
+}
+#clear{
+    clear:both;
+}
+
+
+
+</style>
+
+    <div id="header" style="text-align:center;">
+		<h1>履歷表產生器 BY JSP</h1><h4>4104029039 林宜融</h4>
+	</div>
+	
+    
+    <div id="sidebody">
+		<form name="form1" action="test.jsp" method="post">
+		<br>
+        <b>名字：</b>
+        <INPUT name="username" type=text size=16 maxlength=20 placeholder="範例:XXX">
+        <br><br>
+		<b>生日：</b>
+        <INPUT name="birth" type=date>
+        <br><br> 
+		<b>性別：</b>
+        <INPUT name="radio" type=radio value="男">男　
+        <INPUT name="radio" type=radio value="女">女　　　
+        <br><br> 
+		<b>連絡電話：</b>
+        <INPUT name="telephone" type=text size=16 maxlength=30 placeholder="09xx-xxx-xxx">
+        <br><br> 
+		<b>電子郵件：</b>
+        <INPUT name="email" type=text size=16 maxlength=30 placeholder="example@gmail.com">
+        <br><br>
+		<b>最高學歷：</b>　&nbsp;
+        <select name="school">
+          <option value="國中以下">國中以下</option>
+          <option value="高中">高中</option>
+          <option value="大學">大學</option>
+          <option value="碩士班以上">碩士班以上</option>
+      </select>　　 
+        <br><br>
+		<b>語言能力：</b>　　　　　　　　　
+		<br>
+		中文
+        <input type="range" name="chinese" min="0" max="5" value="0" id="chinese" onmousemove="ch()">
+		<span id="rangespan1" style="background-color:#FFFFFF;"></span>
+        <br> 
+		英文
+        <input type="range" name="english" min="0" max="5" value="0" id="english" onmousemove="en()">
+        <span id="rangespan2" style="background-color:#FFFFFF;"></span>
+		<br>
+		日文
+        <input type="range" name="japan" min="0" max="5" value="0" id="japan" onmousemove="ja()">
+        <span id="rangespan3" style="background-color:#FFFFFF;"></span>
+		<br> 
+		韓文
+        <input type="range" name="korea" min="0" max="5" value="0" id="korea" onmousemove="ko()">
+        <span id="rangespan4" style="background-color:#FFFFFF;"></span>
+		<br>
+		<INPUT name="otherlan" type=text size=2 placeholder="其他" style="text-align:right;">
+        <input type="range" name="otherlannn" min="0" max="5" value="0" id="otherlan" onmousemove="other()">
+        <span id="rangespan5" style="background-color:#FFFFFF;"></span>　
+		<br><br><br>
+		<b>休閒娛樂：</b>　　　　　　　　　
+		<br><br>
+		<select name="hobby" size="5" multiple style="overflow-y:hidden" title= "按下CTRL鍵可以複選">
+          <option value="閱讀">閱讀</option>
+          <option value="運動">運動</option>
+          <option value="音樂">音樂</option>
+          <option value="烹飪">烹飪</option>
+		  <option value="電影">電影</option>
+      </select>
+	  <select name="hobby" size="5" multiple style="overflow-y:hidden" title= "按下CTRL鍵可以複選">
+          <option value="樂器">樂器</option>
+          <option value="裁縫">裁縫</option>
+          <option value="寫作">寫作</option>
+          <option value="跳舞">跳舞</option>
+		  <option value="科技">科技</option>
+      </select>
+	  <select name="hobby" size="5" multiple style="overflow-y:hidden" title= "按下CTRL鍵可以複選">
+          <option value="魔術">魔術</option>
+          <option value="旅遊">旅遊</option>
+          <option value="繪畫">繪畫</option>
+          <option value="設計">設計</option>
+		  <option value="園藝">園藝</option>
+      </select>
+	  <br><br>
+		<b>持有駕照：</b>　　　　　　　　　<br>　　　
+        <INPUT name="license" type=checkbox value="普通輕型機車">普通輕型機車<br>　　　
+		<INPUT name="license" type=checkbox value="普通重型機車">普通重型機車<br>　　　
+		<INPUT name="license" type=checkbox value="大型重型機車">大型重型機車<br>　　　
+        <INPUT name="license" type=checkbox value="普通小型車">普通小型車　<br>　
+		<br><br>
+	  <b>工作經驗：</b>
+	  <br><br>
+	  <table>
+  <tr>
+    <th>年份</th>
+    <th>公司名稱</th>
+    <th>職稱</th>
+  </tr>
+  <tr>
+    <td><input name="y1" type="text" size="20"/></td>
+    <td><input name="c1" type="text" size="20"/></td>
+    <td><input name="t1" type="text" size="20"/></td>
+  </tr>
+  <tr>
+    <td><input name="y2" type="text" size="20"/></td>
+    <td><input name="c2" type="text" size="20"/></td>
+    <td><input name="t2" type="text" size="20"/></td>
+  </tr>
+</table>
+        <br><br>  &nbsp;
+		<b>個人簡介：</b>
+		<br><br>
+        <textarea name="note" type=textarea cols="75" rows="8" placeholder="請做簡單的自我介紹..."></textarea>
+        <br><br><br>
+        <input type="submit" name="send" value="送出" >
+        <input type="reset" value="重新輸入">
+		</form>
+		<br><br>
+
+	</div>
+	
+ <script>
+	function ch() {
+		document.getElementById("rangespan1").innerHTML=document.getElementById("chinese").value;
+	}
+	function en() {
+		document.getElementById("rangespan2").innerHTML=document.getElementById("english").value;
+	}
+	function ja() {
+		document.getElementById("rangespan3").innerHTML=document.getElementById("japan").value;
+	}
+	function ko() {
+		document.getElementById("rangespan4").innerHTML=document.getElementById("korea").value;
+	}
+	function other() {
+		document.getElementById("rangespan5").innerHTML=document.getElementById("otherlan").value;
+	}
+ </script>
+ 
+</body>
+</html>
